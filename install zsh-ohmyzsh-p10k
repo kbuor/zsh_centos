@@ -2,10 +2,9 @@ yum install wget git zsh -y
 wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
 /bin/cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 source ~/.zshrc
-
-yum groupinstall "Development tools"
+yum groupinstall -y "Development tools"
 gcc -v
-yum install ncurses-devel
+yum install -y ncurses-devel
 wget https://sourceforge.net/projects/zsh/files/zsh/5.6.2/zsh-5.6.2.tar.xz/download
 tar -xvJf download
 cd zsh-5.6.2
@@ -14,8 +13,6 @@ make
 make install
 which zsh >> /etc/shells
 chsh -s /usr/local/bin/zsh
-
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-# set: ZSH_THEME="powerlevel10k/powerlevel10k"
 
-p9k_configure
+# set: ZSH_THEME="powerlevel10k/powerlevel10k"
