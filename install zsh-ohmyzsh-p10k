@@ -14,5 +14,4 @@ make install
 which zsh >> /etc/shells
 chsh -s /usr/local/bin/zsh
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-
-# set: ZSH_THEME="powerlevel10k/powerlevel10k"
+sed -i "s/robbyrussell/powerlevel10k\/powerlevel10k/" /root/.zshrc
